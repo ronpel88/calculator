@@ -18,18 +18,18 @@ def usage():
     return calc_usage
 
 
-def calculate(choice, num1, num2):
-    print "choice= " + str(choice)
+def calculate(operation, num1, num2):
+    print "choice= " + str(operation)
     print "num1= " + str(num1)
     print "num2= " + str(num2)
 
-    if choice == 1:
+    if operation == 1:
         return str(num1) + "+" + str(num2) + "=" + str(num1+num2)
-    elif choice == 2:
+    elif operation == 2:
         return str(num1) + "-" + str(num2) + "=" + str(num1-num2)
-    elif choice == 3:
+    elif operation == 3:
         return str(num1) + "*" + str(num2) + "=" + str(num1*num2)
-    elif choice == 4:
+    elif operation == 4:
         return str(num1) + "/" + str(num2) + "=" + str(num1/num2)
     else:
         return "Invalid input"
@@ -41,13 +41,13 @@ if __name__ == '__main__':
 
     while True:
         # Take input from the user
-        choice = input("Please enter choice:")
-        if choice == 5:
+        operation = input("Please enter choice:")
+        if operation == 5:
             result = math.pi
-        elif choice == 6:
+        elif operation == 6:
             result = usage()
         else:
             num1 = int(input("Enter first number: "))
             num2 = int(input("Enter second number: "))
-            result = calculate(choice, num1, num2)
+            result = calculate(operation, num1, num2)
         print result
