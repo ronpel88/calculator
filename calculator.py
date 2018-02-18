@@ -1,13 +1,21 @@
-import operator
+import math
 
+
+def get_calc_options():
+    options = """
+    1. Add
+    2. Subtract
+    3. Multiply
+    4. Divide
+    5. pi
+    6. Help
+    """
+    return options
 
 def usage():
-    print "calculator support the following operators:"
-    print "1.Add"
-    print "2.Subtract"
-    print "3.Multiply"
-    print "4.Divide"
-    print "5. Help"
+    calc_usage = """calculator support the following operators:"""
+    calc_usage = calc_usage + get_calc_options()
+    return calc_usage
 
 
 def calculate(choice, num1, num2):
@@ -16,34 +24,30 @@ def calculate(choice, num1, num2):
     print "num2= " + str(num2)
 
     if choice == 1:
-        print str(num1) + "+" + str(num2) + "=" + str(num1+num2)
-
+        return str(num1) + "+" + str(num2) + "=" + str(num1+num2)
     elif choice == 2:
-        print str(num1) + "-" + str(num2) + "=" + str(num1-num2)
-
+        return str(num1) + "-" + str(num2) + "=" + str(num1-num2)
     elif choice == 3:
-        print str(num1) + "*" + str(num2) + "=" + str(num1*num2)
-
+        return str(num1) + "*" + str(num2) + "=" + str(num1*num2)
     elif choice == 4:
-        print str(num1) + "/" + str(num2) + "=" + str(num1/num2)
+        return str(num1) + "/" + str(num2) + "=" + str(num1/num2)
     else:
-        print("Invalid input")
+        return "Invalid input"
 
 
 if __name__ == '__main__':
-    print "Select operation."
-    print "1. Add"
-    print "2. Subtract"
-    print "3. Multiply"
-    print "4. Divide"
-    print "5. Help"
+    print "Select operation:"
+    print get_calc_options()
 
     while True:
         # Take input from the user
-        choice = input("Enter choice(1/2/3/4/5):")
-        if choice != 5:
+        choice = input("Please enter choice:")
+        if choice == 5:
+            result = math.pi
+        elif choice == 6:
+            result = usage()
+        else:
             num1 = int(input("Enter first number: "))
             num2 = int(input("Enter second number: "))
-            calculate(choice, num1, num2)
-        else:
-            usage()
+            result = calculate(choice, num1, num2)
+        print result
