@@ -5,8 +5,6 @@ arithmetic expressions
 
 Supported operators
 -------------------
-```calculator.hpp``` uses the same operator precedence and associativity
-as the C++ programming language and also supports the power operator.
 
 <table>
   <tr align="center">
@@ -42,3 +40,8 @@ as the C++ programming language and also supports the power operator.
     <td>get calc usage</td>
   </tr>
 </table>
+
+How to use
+----------
+
+run calculator.py / calculator_template.py
