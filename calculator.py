@@ -7,8 +7,9 @@ def get_calc_options():
     2. Subtract
     3. Multiply
     4. Divide
-    5. pi
-    6. Help
+    5. Modulo
+    6. PI
+    7. Help
     """
     return options
 
@@ -31,6 +32,8 @@ def calculate(operation, num1, num2):
         return str(num1) + "*" + str(num2) + "=" + str(num1*num2)
     elif operation == 4:
         return str(num1) + "/" + str(num2) + "=" + str(num1/num2)
+    elif operation == 5:
+        return str(num1) + "%" + str(num2) + "=" + str(num1%num2)
     else:
         return "Invalid input"
 
@@ -42,12 +45,14 @@ if __name__ == '__main__':
     while True:
         # Take input from the user
         operation = input("Please enter choice:")
-        if operation == 5:
+        if operation == 6:
             result = math.pi
-        elif operation == 6:
+        elif operation == 7:
             result = usage()
         else:
-            num1 = int(input("Enter first number: "))
-            num2 = int(input("Enter second number: "))
-            result = calculate(operation, num1, num2)
+            num1 = input("Enter first number: ")
+            num2 = input("Enter second number: ")
+            int_num1 = int(num1)
+            int_num2 = int(num2)
+            result = calculate(operation, int_num1, int_num2)
         print result
